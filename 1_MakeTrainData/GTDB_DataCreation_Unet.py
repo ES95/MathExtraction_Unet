@@ -82,7 +82,7 @@ def Init_AreaType ( Area_CSV_file ):
 def sheet ( sheet_file ):
 	global scale_rate
 	# 読み込み＆白黒反転
-	page_image = np.bitwise_not( io.imread ( sheet_file, as_gray=True ) )
+	page_image = cv2.bitwise_not( cv2.imread ( sheet_file, cv2.IMREAD_GRAYSCALE ) )
 	# 縮小前に disk (radius = 1 / (2*scale)) で膨張処理 
 	page_image_tmp = dilation ( page_image, selem=disk(int(1 / (scale_rate*2))) )
 	page_image = transform.rescale ( page_image_tmp, (scale_rate, scale_rate) )
