@@ -158,7 +158,7 @@ def output_images ( full_img, label_img, CharList, LineList, AreaList, output_fi
 	if any(AreaTypeDict) == False:
 		
 		for rcd in CharList :
-			if int (rcd[7]) == 1 :
+			if int (rcd[6]) == 1 :
 				block = list ( )
 				block.append( [ int( max( (int(rcd[2])-bb_margin)*scale_rate, 0.0 )),
 								int( max( (int(rcd[3])-bb_margin)*scale_rate, 0.0)),
